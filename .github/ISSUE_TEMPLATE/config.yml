@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Synthetic test page (try the bookmarklet without a real site)
+    url: https://decarvalhoe.github.io/capital-ops-horizon-consent-inventory/examples/synthetic-page.html
+    about: Fictional hosts under .invalid and a fake cookie. Use it to reproduce issues without private data.

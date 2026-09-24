@@ -1,0 +1,13 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Consent Inventory — synthetic test page (fictional hosts)</title>
+<style>body{max-width:720px;margin:0 auto;padding:24px 16px;font:16px/1.5 system-ui,sans-serif}</style>
+<link rel="stylesheet" href="https://fonts.cdn-sample.invalid/style.css"></head>
+<body><main>
+<h1>Synthetic test page for Consent Inventory</h1>
+<p>This page is <strong>fictional</strong>. It references hosts under the reserved <code>.invalid</code> top-level domain, which can never resolve, so nothing is actually loaded from anyone. It also sets one fake cookie and one fake localStorage key on this page's own host when it opens. No real tracker is involved.</p>
+<p>Expected inventory: cookies <code>demo_cookie</code>, localStorage <code>demo_key</code>, and three <em>other hosts</em>: <code>analytics.tracker-sample.invalid</code>, <code>ads.tracker-sample.invalid</code>, <code>fonts.cdn-sample.invalid</code>. Resources served from this page's own host are classed as <em>same host</em>.</p>
+<p>To clean up afterwards: clear this site's cookies and storage in your browser settings.</p>
+<script src="https://analytics.tracker-sample.invalid/collect.js"></script>
+<img src="https://ads.tracker-sample.invalid/pixel.gif" alt="" width="1" height="1">
+<iframe src="https://ads.tracker-sample.invalid/frame.html" title="fictional ad frame (never loads)" width="1" height="1"></iframe>
+<script>try{document.cookie='demo_cookie=1; path=/; SameSite=Lax';localStorage.setItem('demo_key','synthetic')}catch(e){}</script>
+</main></body></html>

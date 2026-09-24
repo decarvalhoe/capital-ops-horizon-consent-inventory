@@ -1,0 +1,33 @@
+name: Bug report
+description: Something is wrong (crash, host misclassified, item missing)
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Do not send private data.** Issues are public: no JSON from non-public pages, cookie values, session identifiers, user data or client site names without permission. Rebuild the case with fictional hosts (for example under `.invalid`).
+  - type: input
+    id: browser
+    attributes:
+      label: "Browser and version"
+      placeholder: "e.g. Firefox 130, Chrome 129"
+    validations: { required: true }
+  - type: textarea
+    id: repro
+    attributes:
+      label: Synthetic reproduction
+      description: A minimal fictional HTML snippet (hosts under .invalid), or "synthetic test page".
+      placeholder: "<script src=\"https://a.tracker-sample.invalid/x.js\"></script>"
+    validations: { required: true }
+  - type: textarea
+    id: expected
+    attributes:
+      label: "Expected vs observed"
+    validations: { required: true }
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy check
+      options:
+        - label: This report contains no private data (synthetic example only)
+          required: true

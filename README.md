@@ -1,11 +1,29 @@
-# Inventaire consentement — cookies, stockages et domaines tiers en un clic (bookmarklet)
+# Consent Inventory — cookies, storages and third-party hosts in one click (bookmarklet)
 
-Gratuit, MIT, exécuté dans votre navigateur : **aucune donnée n'est envoyée**. Page : https://decarvalhoe.github.io/capital-ops-horizon-consent-inventory/
+[Version française](README.fr.md)
 
-Liste les cookies lisibles par script, `localStorage`, `sessionStorage` et les domaines tiers chargés (scripts, iframes, images, styles),
-pour vérifier ce qui se charge **avant consentement** (RGPD ; nLPD). Résultat copiable en JSON.
+Free, MIT, runs in your browser: **no data is sent**. Page: https://decarvalhoe.github.io/capital-ops-horizon-consent-inventory/
 
-Règle de classement des hôtes (correctif 2026-09-24, revue opérateur) : **même hôte**, **sous-domaine de la page**, ou **hôte distinct — appartenance non déterminée**. Aucune réduction à un « domaine de base » : `evil.co.uk` reste distinct de `shop.co.uk`, `notmonsite.ch` n'est pas rattaché à `monsite.ch`, et un hôte apparenté (ex. `static.monsite.ch` vu depuis `www.monsite.ch`) est listé comme distinct, l'outil ne décidant pas de l'appartenance juridique.
+Lists the script-readable cookies, `localStorage`, `sessionStorage` and the hosts loaded by scripts, iframes, images and stylesheets,
+to check what loads **before consent** (GDPR; Swiss nFADP). Result can be copied as JSON.
 
-Limites : cookies HttpOnly et requêtes hors DOM non visibles ; outil technique, pas un avis juridique. Tests : `node --test test.mjs` (co.uk, suffixe trompeur, sous-domaine).
-Test public gratuit de la ligue de paris Horizon (24.09.2026) : mesure = trafic GitHub uniquement, aucun traceur.
+**Try it without a real site:** the [synthetic test page](https://decarvalhoe.github.io/capital-ops-horizon-consent-inventory/examples/synthetic-page.html)
+references fictional hosts under the reserved `.invalid` domain (never loaded) and sets a fake cookie and storage key; the expected inventory is printed on it.
+
+Host classification rule (2026-09-24 fix, operator review): **same host**, **subdomain of the page host**, or **other host — ownership undetermined**.
+No reduction to a "base domain": `evil.co.uk` stays distinct from `shop.co.uk`, `notmonsite.ch` is not attached to `monsite.ch`, and a related host
+(e.g. `static.monsite.ch` seen from `www.monsite.ch`) is listed as other, since the tool does not decide legal ownership.
+
+## Feedback and support
+
+Voluntary feedback goes through [GitHub Issues](https://github.com/decarvalhoe/capital-ops-horizon-consent-inventory/issues/new/choose)
+(bug report or feedback form). Best effort, no guaranteed response time. See [SUPPORT.md](SUPPORT.md).
+
+**Do not send private data.** Issues are public: no JSON output from non-public pages, cookie values, session identifiers, user data or client
+site names without permission. Reproduce with a synthetic example such as the test page above.
+
+## Limits
+
+HttpOnly cookies and non-DOM network requests are not visible; a technical tool, not legal advice.
+Tests: `node --test test.mjs` (co.uk, misleading suffix, subdomain, bookmarklet filter by relation code).
+Free public test of the Horizon betting league (24 Sep 2026): measurement = GitHub traffic only, no trackers.
