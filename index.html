@@ -10,6 +10,7 @@
 <p><a class="btn" id="bm" href="#">Inventaire consentement</a></p>
 <p>Code : <a href="bookmarklet.txt">bookmarklet.txt</a> · source lisible : <a href="bookmarklet.js">bookmarklet.js</a> · <a href="https://github.com/decarvalhoe/capital-ops-horizon-consent-inventory">dépôt GitHub</a> (MIT).</p>
 <h2>Mode d'emploi « avant consentement »</h2><ol><li>Ouvrez la page en navigation privée.</li><li>Ne cliquez pas sur la bannière.</li><li>Lancez le bookmarklet et copiez le JSON.</li></ol>
+<h2>Règle de classement des hôtes</h2><p>Chaque hôte chargé est classé <strong>même hôte</strong>, <strong>sous-domaine de la page</strong> ou <strong>hôte distinct — appartenance non déterminée</strong>. L'outil ne devine pas de « domaine de base » : <code>evil.co.uk</code> reste distinct de <code>shop.co.uk</code>, et un hôte apparenté est listé comme distinct plutôt que rattaché à tort.</p>
 <h2>Limites</h2><ul><li>Les cookies <code>HttpOnly</code> ne sont pas visibles par script ; les requêtes réseau non liées à un élément du DOM non plus.</li><li>Outil d'inventaire technique, pas un avis juridique.</li></ul>
 <p><small>Horizon — projet personnel. Licence MIT. Sans cookies, sans traceurs.</small></p></main>
 <script>fetch('bookmarklet.txt').then(r=>r.text()).then(t=>{document.getElementById('bm').setAttribute('href',t.trim())});</script>
